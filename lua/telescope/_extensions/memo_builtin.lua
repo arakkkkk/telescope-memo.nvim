@@ -46,7 +46,7 @@ local function gen_from_memo(opts)
 end
 
 local function detect_memo_dir(memo_bin)
-  local lines = utils.get_os_command_output{memo_bin, 'config', '--cat'}
+  local lines = utils.get_os_command_output{memo_bin, 'config'}
   for _, line in ipairs(lines) do
     local dir = line:match'memodir%s*=%s*"(.*)"'
     if dir then
